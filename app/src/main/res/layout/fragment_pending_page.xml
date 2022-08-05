@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
+    tools:context=".Fragment.PendingPage">
+
+
+    <RelativeLayout
+        android:id="@+id/errorContainer"
+        android:layout_width="match_parent"
+        android:background="@color/red"
+        android:padding="4dp"
+        android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/errorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Error"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                />
+    </RelativeLayout>
+
+   <RelativeLayout
+       android:layout_below="@id/errorContainer"
+       android:id="@+id/toolbarCon"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+       <RelativeLayout
+           android:id="@+id/toolbar"
+           android:layout_width="match_parent"
+           android:layout_margin="16dp"
+           android:layout_height="wrap_content">
+           <TextView
+               android:id="@+id/title"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textColor="@color/black"
+               android:textAlignment="center"
+               android:text="Title"
+               android:textSize="18sp"
+               android:textStyle="bold"
+               />
+
+           <TextView
+               android:id="@+id/check"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentEnd="true"
+               android:text="Saýla"
+               android:textAlignment="center"
+               android:textColor="@color/blue"
+               android:textSize="18sp"
+               android:textStyle="bold" />
+       </RelativeLayout>
+
+       <LinearLayout
+           android:id="@+id/hiddenToolbar"
+           android:layout_width="match_parent"
+           android:padding="16dp"
+           android:visibility="gone"
+           android:background="@drawable/white_round"
+           android:gravity="end"
+           android:layout_height="wrap_content">
+           <TextView
+               android:id="@+id/cancel"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textColor="@color/yellow"
+               android:text="Aýyr"
+               android:drawableStart="@drawable/ic_outline_cancel_24"
+               android:layout_alignParentEnd="true"
+               android:gravity="center_vertical"
+               android:drawablePadding="6dp"
+               android:drawableTint="@color/yellow"
+               android:textSize="14sp"
+               android:textStyle="bold"
+               android:layout_marginEnd="16dp"
+               />
+
+
+           <TextView
+               android:id="@+id/accept"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textColor="@color/green_2"
+               android:text="Kabul et"
+               android:drawableStart="@drawable/ic_baseline_check_circle_outline_24"
+               android:layout_alignParentEnd="true"
+               android:gravity="center_vertical"
+               android:drawablePadding="6dp"
+               android:drawableTint="@color/green_2"
+               android:textSize="14sp"
+               android:textStyle="bold"
+               android:layout_marginEnd="16dp"
+               />
+
+           <TextView
+               android:id="@+id/reject"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textColor="@color/red"
+               android:text="Sargydy ýatyr"
+               android:drawableStart="@drawable/ic_outline_cancel_24"
+               android:layout_alignParentEnd="true"
+               android:gravity="center_vertical"
+               android:drawablePadding="6dp"
+               android:drawableTint="@color/red"
+               android:textSize="14sp"
+               android:textStyle="bold"
+               android:layout_marginEnd="16dp"
+               />
+
+       </LinearLayout>
+   </RelativeLayout>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbarCon"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/white_round"
+        android:saveEnabled="true"
+        app:defaultQueryHint="Gözleg..."
+        app:iconifiedByDefault="false"
+        app:queryHint="Gözleg..." />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchView"
+        android:layout_marginTop="6dp"
+        />
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/empty"
+        android:gravity="center_horizontal"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_outline_folder_open_24"
+                app:tint="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Maglumat ýok"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</RelativeLayout>

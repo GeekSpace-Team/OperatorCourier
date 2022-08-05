@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".Activity.OrderDetail">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/titlePhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_arrow_back_ios_24"
+                android:drawableTint="@color/text_color"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/text_color"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/fullname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/ic_baseline_location_on_24"
+            android:gravity="center_vertical"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/blue"
+            />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:drawableStart="@drawable/ic_baseline_access_time_filled_24"
+            android:gravity="center_vertical"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/blue"
+            android:textStyle="bold"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="6dp"
+            android:text="Gosmaca bellikler:"
+            android:textColor="@color/text_color"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            android:text="..."
+            android:textColor="@color/text_color"
+            android:textSize="14sp"
+            android:background="@drawable/tv_bg"
+            android:padding="12dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="6dp"
+            android:text="Status:"
+            android:textColor="@color/text_color"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            android:text="..."
+            android:textColor="@color/text_color"
+            android:textSize="14sp"
+            android:background="@drawable/tv_bg"
+            android:padding="12dp"
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="6dp"
+            android:text="Eltip bermek bahasy:"
+            android:textColor="@color/text_color"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:id="@+id/deliveryPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="2dp"
+            android:text="0 TMT"
+            android:textColor="@color/text_color"
+            android:textSize="14sp"
+            android:background="@drawable/tv_bg"
+            android:padding="12dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            android:text="Eltip bermek bahasyny üýtget"
+            android:drawableStart="@drawable/ic_baseline_edit_24"
+            android:drawableTint="@color/yellow"
+            android:textStyle="bold"
+            android:gravity="end|center_vertical"
+            android:textColor="@color/yellow"
+            android:drawablePadding="6dp"
+            />
+
+        <LinearLayout
+            android:id="@+id/editDeliveryPriceContainer"
+            android:layout_marginBottom="12dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="6dp"
+                android:text="Taze eltip bermek bahasy:"
+                android:textColor="@color/text_color"
+                android:textSize="14sp"
+                />
+
+            <EditText
+                android:id="@+id/newDeliveryPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="2dp"
+                android:inputType="number"
+                android:hint="0"
+                android:textColor="@color/text_color"
+                android:textSize="14sp"
+                android:background="@drawable/tv_bg"
+                android:padding="12dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="6dp"
+                android:text="Sebabi:"
+                android:textColor="@color/text_color"
+                android:textSize="14sp"
+                />
+
+            <EditText
+                android:id="@+id/reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="2dp"
+                android:inputType="number"
+                android:hint="Mes: Ýeri üýtgedi..."
+                android:textColor="@color/text_color"
+                android:textSize="14sp"
+                android:background="@drawable/tv_bg"
+                android:padding="12dp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Üýtget"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/yellow"
+                />
+        </LinearLayout>
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="6dp"
+            android:text="Jemi:"
+            android:textColor="@color/text_color"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            android:text="0 TMT"
+            android:textColor="@color/text_color"
+            android:textSize="14sp"
+            android:background="@drawable/tv_bg"
+            android:padding="12dp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Ýatda sakla"
+            android:textColor="@color/white"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>
