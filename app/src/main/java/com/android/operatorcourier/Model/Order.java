@@ -1,23 +1,62 @@
 package com.android.operatorcourier.Model;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.ArrayList;
 
+@Entity
 public class Order {
+    @PrimaryKey(autoGenerate = true)
+    public int uid;
+
+    @ColumnInfo(name = "id")
     private String id;
+
+    @ColumnInfo(name = "unique_id")
     private String unique_id;
+
+    @ColumnInfo(name = "is_express")
     private Boolean is_express;
+
+    @ColumnInfo(name = "created_at")
     private String created_at;
+
+    @ColumnInfo(name = "updated_at")
     private String updated_at;
+
+    @ColumnInfo(name = "additional_information")
     private String additional_information;
+
+    @ColumnInfo(name = "customer_unique_id")
     private String customer_unique_id;
+
+    @ColumnInfo(name = "operator_unique_id")
     private String operator_unique_id;
+
+    @ColumnInfo(name = "fullname")
     private String fullname;
+
+    @ColumnInfo(name = "phone_number")
     private String phone_number;
+
+    @ColumnInfo(name = "order_address_history")
     private ArrayList<OrderAddressHistory> order_address_history=new ArrayList<>();
+
+    @ColumnInfo(name = "order_date_history")
     private ArrayList<OrderDateHistory> order_date_history=new ArrayList<>();
+
+    @ColumnInfo(name = "order_location_history")
     private ArrayList<OrderLocationHistory> order_location_history=new ArrayList<>();
 
-    public Order(String id, String unique_id, Boolean is_express, String created_at, String updated_at, String additional_information, String customer_unique_id, String operator_unique_id, String fullname, String phone_number, ArrayList<OrderAddressHistory> order_address_history, ArrayList<OrderDateHistory> order_date_history, ArrayList<OrderLocationHistory> order_location_history) {
+    @ColumnInfo(name = "order_price_history")
+    private ArrayList<OrderDeliveryPriceHistory> order_price_history=new ArrayList<>();
+
+    @ColumnInfo(name = "current_status")
+    private String current_status;
+
+    public Order(String id, String unique_id, Boolean is_express, String created_at, String updated_at, String additional_information, String customer_unique_id, String operator_unique_id, String fullname, String phone_number, ArrayList<OrderAddressHistory> order_address_history, ArrayList<OrderDateHistory> order_date_history, ArrayList<OrderLocationHistory> order_location_history, ArrayList<OrderDeliveryPriceHistory> order_price_history, String current_status) {
         this.id = id;
         this.unique_id = unique_id;
         this.is_express = is_express;
@@ -31,6 +70,8 @@ public class Order {
         this.order_address_history = order_address_history;
         this.order_date_history = order_date_history;
         this.order_location_history = order_location_history;
+        this.order_price_history = order_price_history;
+        this.current_status = current_status;
     }
 
     public String getId() {
@@ -135,5 +176,21 @@ public class Order {
 
     public void setOrder_location_history(ArrayList<OrderLocationHistory> order_location_history) {
         this.order_location_history = order_location_history;
+    }
+
+    public ArrayList<OrderDeliveryPriceHistory> getOrder_price_history() {
+        return order_price_history;
+    }
+
+    public void setOrder_price_history(ArrayList<OrderDeliveryPriceHistory> order_price_history) {
+        this.order_price_history = order_price_history;
+    }
+
+    public String getCurrent_status() {
+        return current_status;
+    }
+
+    public void setCurrent_status(String current_status) {
+        this.current_status = current_status;
     }
 }

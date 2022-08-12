@@ -1,12 +1,33 @@
 package com.android.operatorcourier.Model;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class OrderDeliveryPriceHistory {
+    @PrimaryKey(autoGenerate = true)
+    public int uid;
+
+    @ColumnInfo(name = "id")
     private String id;
+
+    @ColumnInfo(name = "customer_order_unique_id")
     private String customer_order_unique_id;
+
+    @ColumnInfo(name = "user_unique_id")
     private String user_unique_id;
+
+    @ColumnInfo(name = "delivery_price")
     private String delivery_price;
+
+    @ColumnInfo(name = "reason")
     private String reason;
+
+    @ColumnInfo(name = "created_at")
     private String created_at;
+
+    @ColumnInfo(name = "updated_at")
     private String updated_at;
 
     public OrderDeliveryPriceHistory(String id, String customer_order_unique_id, String user_unique_id, String delivery_price, String reason, String created_at, String updated_at) {

@@ -1,6 +1,7 @@
 package com.android.operatorcourier.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.operatorcourier.Activity.MainActivity;
+import com.android.operatorcourier.Activity.OrderDetail;
 import com.android.operatorcourier.Common.Constant;
 import com.android.operatorcourier.Fragment.PendingPage;
 import com.android.operatorcourier.Model.Order;
@@ -84,6 +87,13 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
             public void onClick(View view) {
                 if(isAvailableCheck){
                     holder.checkbox.setChecked(!holder.checkbox.isChecked());
+                } else {
+                    MainActivity.get().checkConnection();
+                    Intent intent=new Intent(context, OrderDetail.class);
+                    intent.putExtra("unique_id",item.getUnique_id());
+                    OrderDetail.order=item;
+                    OrderDetail.status=status;
+                    context.startActivity(intent);
                 }
             }
         });

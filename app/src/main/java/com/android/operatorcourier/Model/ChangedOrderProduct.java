@@ -5,7 +5,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class OrderProduct {
+public class ChangedOrderProduct {
     @PrimaryKey(autoGenerate = true)
     public int uid;
 
@@ -63,7 +63,7 @@ public class OrderProduct {
     @ColumnInfo(name = "order_product_status")
     private String order_product_status;
 
-    public OrderProduct(String id, String customer_order_unique_id, String product_name, String product_brand, String product_model, String product_artikul_code, String product_debt_price, String product_cash_price, String product_discount, String product_size, String product_color, String product_count, String unique_id, String created_at, String updated_at, String reason, String operator_unique_id, String order_product_status) {
+    public ChangedOrderProduct(String id, String customer_order_unique_id, String product_name, String product_brand, String product_model, String product_artikul_code, String product_debt_price, String product_cash_price, String product_discount, String product_size, String product_color, String product_count, String unique_id, String created_at, String updated_at, String reason, String operator_unique_id, String order_product_status) {
         this.id = id;
         this.customer_order_unique_id = customer_order_unique_id;
         this.product_name = product_name;
